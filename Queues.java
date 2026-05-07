@@ -5,6 +5,8 @@ public class Queues {
 
    public static void main(String[] args) {
 
+      System.out.println("JAVA COLLECTION");
+
       Queue queue = new LinkedList<>();
 
       /* 1. Add() */
