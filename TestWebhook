@@ -1,11 +1,6 @@
 TEST WEBHOOK
 
-touch test.txt
+echo "jenkins webhook working" >> test.txt
 git add .
-git commit -m "testing webhook"
+git commit -m "jenkins webhook final"
 git push
-
-git add .
-git commit -m "ngrok webhook test"
-git push
-dgsdg
