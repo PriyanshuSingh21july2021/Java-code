@@ -1,6 +1,4 @@
-TEST WEBHOOK
-
-echo "jenkins webhook working" >> test.txt
 git add .
-git commit -m "jenkins webhook final"
+git commit -m "testing webhook"
 git push
+
