@@ -1,0 +1,55 @@
+Q.7 Clone Git Project Using Jenkins Webhook
+
+Step 1:
+Enable Trigger
+Build Triggers →
+GitHub hook trigger for GITScm polling
+
+Step 2:
+Install ngrok
+sudo dpkg -i ngrok-v3-stable-linux-amd64.deb
+
+Step 3:
+Add ngrok Token
+ngrok config add-authtoken YOUR_TOKEN
+
+Step 4:
+Start ngrok
+ngrok http 8080
+
+Copy URL:
+https://scale-faceplate-hypnotize.ngrok-free.dev/
+
+Step 5:
+Configure Jenkins URL
+Manage Jenkins → System
+
+Jenkins URL:
+https://scale-faceplate-hypnotize.ngrok-free.dev/
+
+Step 6:
+Add GitHub Webhook
+Repo → Settings → Webhooks
+
+Payload URL:
+https://scale-faceplate-hypnotize.ngrok-free.dev/github-webhook/
+
+Content Type:
+application/json
+
+Event:
+Just the push event
+
+Step 7:
+Test Webhook
+git add .
+git commit -m "Webhook Test"
+git push
+
+Step 8:
+Verify Build
+
+Started by GitHub push
+
+Jenkins automatically fetch latest code:
+git fetch --tags --force --progress -- https://github.com/PriyanshuSingh21july2021/Java-code.
