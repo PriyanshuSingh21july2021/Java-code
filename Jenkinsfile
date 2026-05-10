@@ -5,8 +5,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main',
-                url: 'https://github.com/PriyanshuSingh21july2021/Java-code.git'
+                git 'https://github.com/PriyanshuSingh21july2021/Java-code.git'
             }
         }
 
@@ -23,16 +22,23 @@ pipeline {
                 sh 'java Queues'
             }
         }
-
     }
 
     post {
         success {
-            echo "Build Successful 🚀"
+            emailext (
+                subject: "Build Success: ${env.JOB_NAME}",
+                body: "Build completed successfully.\nBuild URL: ${env.BUILD_URL}",
+                to: "yourgmail@gmail.com"
+            )
         }
 
         failure {
-            echo "Build Failed ❌"
+            emailext (
+                subject: "Build Failed: ${env.JOB_NAME}",
+                body: "Build failed.\nCheck console output: ${env.BUILD_URL}",
+                to: "yourgmail@gmail.com"
+            )
         }
     }
 }
