@@ -29,7 +29,7 @@ pipeline {
             emailext (
                 subject: "Build Success: ${env.JOB_NAME}",
                 body: "Build completed successfully.\nBuild URL: ${env.BUILD_URL}",
-                to: "yourgmail@gmail.com"
+                to: "priyanshusingh88251@gmail.com"
             )
         }
 
@@ -37,7 +37,7 @@ pipeline {
             emailext (
                 subject: "Build Failed: ${env.JOB_NAME}",
                 body: "Build failed.\nCheck console output: ${env.BUILD_URL}",
-                to: "yourgmail@gmail.com"
+                to: "priyanshusingh88251@gmail.com"
             )
         }
     }
