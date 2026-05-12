@@ -16,9 +16,8 @@ public class Queues {
 
       System.out.println(queue);
 
-      // Intentional Error
-      int result = 10 / 0;
+      // Intentional Compilation Error
+      System.out.println(number);
 
-      System.out.println(result);
    }
 }
