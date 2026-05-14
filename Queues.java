@@ -16,8 +16,7 @@ public class Queues {
 
       System.out.println(queue);
 
-      // Intentional Compilation Error
+      int number = 100;
       System.out.println(number);
-
    }
 }
